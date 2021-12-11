@@ -10,8 +10,9 @@ public class JMyTextField extends JTextField {
     private Color tlo;
     private Color kolor;
 
-    public JMyTextField(String text, Font font, EmptyBorder margines, Color tlo, Color kolor) {
-        super(text);
+    public JMyTextField(String hint, Font font, EmptyBorder margines, Color tlo, Color kolor) {
+        super();
+        this.setToolTipText(hint);
         this.font = font;
         this.margines = margines;
         this.tlo = tlo;
@@ -27,8 +28,9 @@ public class JMyTextField extends JTextField {
         this.setOpaque(true);
     }
 
-    public JMyTextField(String text, Font font, EmptyBorder margines) {
-        super(text);
+    public JMyTextField(String hint, Font font, EmptyBorder margines) {
+        super();
+        this.setToolTipText(hint);
         this.font = font;
         this.margines = margines;
         this.setFont(font);

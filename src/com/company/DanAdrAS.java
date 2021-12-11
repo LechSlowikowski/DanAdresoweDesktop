@@ -4,6 +4,7 @@ import javax.swing.*;
 import javax.swing.border.Border;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
+import java.util.Locale;
 
 public class DanAdrAS {
 
@@ -17,6 +18,7 @@ public class DanAdrAS {
         Font fontTytul = new Font("Verdana", Font.BOLD, 25);
         Font fontLabel = new Font("Arial", Font.ITALIC, 18);
         Font fontEdit = new Font("Arial", Font.PLAIN, 18);
+        Font fontMaly = new Font("Arial", Font.PLAIN, 12);
         //definiujemy marginesy
         EmptyBorder marginesLewy = new EmptyBorder(0, 5, 0, 0);
 
@@ -45,8 +47,33 @@ public class DanAdrAS {
         panelPrzycisku.add(btnZatwierdz);
 
         JPanel panelKomunikatu = new JPanel();
-        JMyLabel lblKomunikat = new JMyLabel("Autor 89012345678", fontLabel, marginesLewy);
+        JMyLabel lblKomunikat = new JMyLabel("Autor 89012345678", fontMaly, marginesLewy);
         panelKomunikatu.add(lblKomunikat);
+
+        btnZatwierdz.addActionListener(e -> {
+            String imieStr = txtImie.getText(); //pobieramy imię z kontrolki do zmiennej imieStr
+            String pierwszaLitera = imieStr.substring(0,1); //z imieStr pobieramy pierwszą literę
+            pierwszaLitera = pierwszaLitera.toUpperCase(Locale.ROOT); //pierwszą iterę zamieniamy na wielką
+            imieStr = pierwszaLitera + imieStr.substring(1); //imieStr = pierwsza wielka litera i pozostałą część imienia
+            txtImie.setText(imieStr); // podmieniamy imię w kontrolce
+
+            String nazwiskoStr = txtNazwisko.getText(); //pobieramy nazwisko z kontrolki do zmiennej imieStr
+            pierwszaLitera = nazwiskoStr.substring(0,1); //z nazwiskoStr pobieramy pierwszą literę
+            pierwszaLitera = pierwszaLitera.toUpperCase(Locale.ROOT); //pierwszą iterę zamieniamy na wielką
+            nazwiskoStr = pierwszaLitera + nazwiskoStr.substring(1); //nazwiskoStr = pierwsza wielka litera i pozostałą część nazwiska
+            txtNazwisko.setText(nazwiskoStr); // podmieniamy imię w kontrolce
+
+            String komunikatStr = "";
+            String miastoStr = txtMiasto.getText();
+            if(!(miastoStr.equals("Sopot") || miastoStr.equals("Gdańsk") || miastoStr.equals("Gdynia"))){
+                komunikatStr ="Nieprawidłowe miasto. ";
+            }
+            String telefonStr = txtTelefon.getText();
+            if(telefonStr.length()>9) komunikatStr += "Za długi mumer telefonu";
+            if(telefonStr.length()<9) komunikatStr += "Za krótki mumer telefonu";
+            if(komunikatStr.length()==0) komunikatStr = "Witaj " + imieStr + " " + nazwiskoStr;
+            lblKomunikat.setText(komunikatStr);
+        });
 
         panelGlowny.add(lblTytul);
         panelGlowny.add(lblImie);
