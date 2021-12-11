@@ -6,8 +6,22 @@ import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.util.Locale;
 
+/********************************************************
+ * nazwa klasy: DanAdrAS
+ * parametry wejściowe: brak
+ * wartość zwracana: brak
+ * opis: główna klasa uruchomieniowa
+ * autor: 89012345678
+ * ****************************************************/
 public class DanAdrAS {
 
+    /********************************************************
+     * nazwa funkcji: main
+     * parametry wejściowe: args - tablica parametrów uruchomieniowych
+     * wartość zwracana: brak
+     * opis: metoda startująca aplikację
+     * autor: 89012345678
+     * ****************************************************/
     public static void main(String[] args) {
         JFrame okno = new JFrame("Dane osobowe");
         okno.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -50,6 +64,7 @@ public class DanAdrAS {
         JMyLabel lblKomunikat = new JMyLabel("Autor 89012345678", fontMaly, marginesLewy);
         panelKomunikatu.add(lblKomunikat);
 
+        //obsługa wybrania przycisku
         btnZatwierdz.addActionListener(e -> {
             String imieStr = txtImie.getText(); //pobieramy imię z kontrolki do zmiennej imieStr
             String pierwszaLitera = imieStr.substring(0,1); //z imieStr pobieramy pierwszą literę
