@@ -21,65 +21,23 @@ public class DanAdrAS {
         EmptyBorder marginesLewy = new EmptyBorder(0, 5, 0, 0);
 
         //etykieta tytułowa
-        //JMyLabel lblTytul = new JMyLabel("Dane osobowe", fontTytul, marginesLewy, Color.GREEN, Color.WHITE);
-
-        JLabel lblTytul = new JLabel("Dane osobowe");
-        lblTytul.setFont(fontTytul);
-        lblTytul.setBackground(Color.GREEN);
-        lblTytul.setForeground(Color.WHITE);
-        lblTytul.setBorder(marginesLewy);
-        lblTytul.setOpaque(true);
-
-
+        JMyLabel lblTytul = new JMyLabel("Dane osobowe", fontTytul, marginesLewy, Color.GREEN, Color.WHITE);
         //etykieta imie
-        //JMyLabel lblImie = new JMyLabel("Imię:", fontLabel, marginesLewy);
-
-        JLabel lblImie = new JLabel("Imię:");
-        lblImie.setFont(fontLabel);
-        lblImie.setBorder(marginesLewy);
-        lblImie.setOpaque(true);
-
+        JMyLabel lblImie = new JMyLabel("Imię:", fontLabel, marginesLewy);
         //pole edycyjne imie
-        JTextField txtImie = new JTextField("Wprowadź imię");
-        txtImie.setFont(fontEdit);
-        txtImie.setBorder(marginesLewy);
-        txtImie.setOpaque(true);
-
+        JMyTextField txtImie = new JMyTextField("Wprowadź imię", fontEdit, marginesLewy);
         //etykieta nazwisko
-        JLabel lblNazwisko = new JLabel("Nazwisko:");
-        lblNazwisko.setFont(fontLabel);
-        lblNazwisko.setBorder(marginesLewy);
-        lblNazwisko.setOpaque(true);
-
+        JMyLabel lblNazwisko = new JMyLabel("Nazwisko:", fontLabel, marginesLewy);
         //pole edycyjne nazwisko
-        JTextField txtNazwisko = new JTextField("Wprowadź nazwisko");
-        txtNazwisko.setFont(fontEdit);
-        txtNazwisko.setBorder(marginesLewy);
-        txtNazwisko.setOpaque(true);
-
+        JMyTextField txtNazwisko = new JMyTextField("Wprowadź nazwisko", fontEdit, marginesLewy);
         //etykieta miasto
-        JLabel lblMiasto = new JLabel("Miasto:");
-        lblMiasto.setFont(fontLabel);
-        lblMiasto.setBorder(marginesLewy);
-        lblMiasto.setOpaque(true);
-
+        JMyLabel lblMiasto = new JMyLabel("Miasto:", fontLabel, marginesLewy);
         //pole edycyjne miasto
-        JTextField txtMiasto = new JTextField("Wprowadź miasto");
-        txtMiasto.setFont(fontEdit);
-        txtMiasto.setBorder(marginesLewy);
-        txtMiasto.setOpaque(true);
-
+        JMyTextField txtMiasto = new JMyTextField("Wprowadź miasto", fontEdit, marginesLewy);
         //etykieta telefon
-        JLabel lblTelefon = new JLabel("Telefon:");
-        lblTelefon.setFont(fontLabel);
-        lblTelefon.setBorder(marginesLewy);
-        lblTelefon.setOpaque(true);
-
+        JMyLabel lblTelefon = new JMyLabel("Telefon:", fontLabel, marginesLewy);
         //pole edycyjne telefon
-        JTextField txtTelefon = new JTextField("Wprowadź telefon");
-        txtTelefon.setFont(fontEdit);
-        txtTelefon.setBorder(marginesLewy);
-        txtTelefon.setOpaque(true);
+        JMyTextField txtTelefon = new JMyTextField("Wprowadź telefon", fontEdit, marginesLewy);
 
         JPanel panelPrzycisku = new JPanel();
         JButton btnZatwierdz = new JButton("ZATWIERDŹ");
@@ -87,9 +45,7 @@ public class DanAdrAS {
         panelPrzycisku.add(btnZatwierdz);
 
         JPanel panelKomunikatu = new JPanel();
-        JLabel lblKomunikat = new JLabel("Autor 89012345678");
-        lblKomunikat.setFont(fontLabel);
-        lblKomunikat.setOpaque(true);
+        JMyLabel lblKomunikat = new JMyLabel("Autor 89012345678", fontLabel, marginesLewy);
         panelKomunikatu.add(lblKomunikat);
 
         panelGlowny.add(lblTytul);
